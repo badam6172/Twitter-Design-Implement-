@@ -1,0 +1,5 @@
+Create (uUserinfo1:User {userid: 'Userinfo1',title: 'Mr.', fname:'userid1',mname:'m', lname:'Name1',password:'userpassword@1', mobilenum:'901901991'});
+Create (ctestuser1:Credential {username: 'testuser1',password: 'P@ss1234', otp: 'token', emailid:'user@123.com', mobilenum:'803156578'});  CREATE (ctestuser1)-[:Credentials_Of]->(utestuser1);
+Create (postid2: Tweet { tweet_id: 'postid2', status: 'messege2', image:'localdisk/image.png',  tweeted_by:'testuser1'}) Create (postid2)-[:Tweeted_by]->(utestuser1)
+Create (UID1: Followers{uid:'UID1', follower:'testuser1', following:'testuser86', time:date('2022-07-29')}) Create (utestuser86)-[:Followed_by]->(utestuser1)
+Create (commentid: Comment {id: 'commentid' ,post_id:'postid1', comment:'Comment Text 1', user_id:'user1', time: datetime('2022-07-29T20:19:56')}) Create (uuser1)-[:Commented]->(ccommentid) Create (ccommentid)-[:Comment_on]->(ppostid1)
